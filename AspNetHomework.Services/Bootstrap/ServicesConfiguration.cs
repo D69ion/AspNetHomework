@@ -5,14 +5,14 @@ using Microsoft.Extensions.DependencyInjection;
 namespace AspNetHomework.Services.Bootstrap
 {
     /// <summary>
-    /// Методы расширения для конфигурации сервисов.
+    /// Методы расширения для конфигурации сервисов
     /// </summary>
     public static class ServicesConfiguration
     {
         /// <summary>
-        /// Конфигурация сервисов.
+        /// Конфигурация сервисов
         /// </summary>
-        /// <param name="services">Конфигурация сервисов из Startup.</param>
+        /// <param name="services">Конфигурация сервисов из Startup</param>
         public static void ConfigureServices(this IServiceCollection services)
         {
             services.AddTransient<IProductService, ProductService>();

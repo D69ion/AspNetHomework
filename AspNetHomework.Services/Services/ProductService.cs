@@ -7,7 +7,7 @@ using AspNetHomework.Database.Mocks;
 namespace AspNetHomework.Services.Services
 {
     /// <summary>
-    /// Сервис для работы с данными о товарах.
+    /// Сервис для работы с данными о товарах
     /// </summary>
     public class ProductService : IProductService
     {

@@ -5,12 +5,12 @@ using AutoMapper;
 namespace AspNetHomework.Services
 {
     /// <summary>
-    /// Профиль маппинга (товар).
+    /// Профиль маппинга (товар)
     /// </summary>
     public class ProductProfile : Profile 
     {
         /// <summary>
-        /// Инициализарует экземпляр <see cref="ProductProfile"/>.
+        /// Инициализарует экземпляр <see cref="ProductProfile"/>
         /// </summary>
         public ProductProfile()
         {
