@@ -4,7 +4,7 @@ using System.Collections.Generic;
 namespace AspNetHomework.Services.Interfaces
 {
     /// <summary>
-    /// Интерфейс сервиса для работы с данными о товарах 
+    /// Интерфейс сервиса для работы с данными о товарах.
     /// </summary>
     public interface IProductService
     {
