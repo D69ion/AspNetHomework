@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>AspNetHomework</name>
+    </assembly>
+    <members>
+        <member name="T:AspNetHomework.Common.Swagger.SwaggerConfiguration">
+            <summary>
+            Расширения для конфигурации Swagger
+            </summary>
+        </member>
+        <member name="M:AspNetHomework.Common.Swagger.SwaggerConfiguration.ConfigureSwagger(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            Настройка документов Swagger.
+            </summary>
+            <param name="services">Коллекция сервисов для DI</param>
+        </member>
+        <member name="T:AspNetHomework.Common.Swagger.SwaggerDocParts">
+            <summary>
+            Константы для указания частей API в Swagger
+            </summary>
+        </member>
+        <member name="F:AspNetHomework.Common.Swagger.SwaggerDocParts.Product">
+            <summary>
+            Коснтанта для swagger-документа "Товар"
+            </summary>
+        </member>
+        <member name="T:AspNetHomework.Controllers.ProductsController">
+            <summary>
+            Контроллер для работы с данными об одежде
+            </summary>
+        </member>
+        <member name="M:AspNetHomework.Controllers.ProductsController.#ctor(Microsoft.Extensions.Logging.ILogger{AspNetHomework.Controllers.ProductsController},AspNetHomework.Services.Interfaces.IProductService)">
+            <summary>
+            Инициализирует экземпляр <see cref="T:AspNetHomework.Controllers.ProductsController"/>
+            </summary>
+            <param name="logger">Логгер</param>
+            <param name="productService">Сервис товаров</param>
+        </member>
+        <member name="M:AspNetHomework.Controllers.ProductsController.Get">
+            <summary>
+            Получение перечня доступных товаров
+            </summary>
+            <returns>Коллекция сущностей "Товары"</returns>
+        </member>
+    </members>
+</doc>

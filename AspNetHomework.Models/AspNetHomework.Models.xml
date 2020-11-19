@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>AspNetHomework.Models</name>
+    </assembly>
+    <members>
+        <member name="T:AspNetHomework.Models.ProductDTO">
+            <summary>
+            DTO для <see cref="T:AspNetHomework.Database.Product"/>
+            </summary>
+        </member>
+        <member name="P:AspNetHomework.Models.ProductDTO.VendorCode">
+            <summary>
+            Артикул
+            </summary>
+        </member>
+        <member name="P:AspNetHomework.Models.ProductDTO.Name">
+            <summary>
+            Название
+            </summary>
+        </member>
+        <member name="P:AspNetHomework.Models.ProductDTO.Description">
+            <summary>
+            Описание
+            </summary>
+        </member>
+        <member name="P:AspNetHomework.Models.ProductDTO.Price">
+            <summary>
+            Цена
+            </summary>
+        </member>
+        <member name="P:AspNetHomework.Models.ProductDTO.Weight">
+            <summary>
+            Вес в кг
+            </summary>
+        </member>
+    </members>
+</doc>
