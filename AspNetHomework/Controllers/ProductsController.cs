@@ -12,7 +12,7 @@ using Microsoft.Extensions.Logging;
 namespace AspNetHomework.Controllers
 {
     /// <summary>
-    /// Контроллер для работы с данными об одежде
+    /// Контроллер для работы с данными об одежде.
     /// </summary>
     [Route("api/[controller]")]
     [ApiController]
@@ -23,10 +23,10 @@ namespace AspNetHomework.Controllers
         private readonly IProductService _productService;
 
         /// <summary>
-        /// Инициализирует экземпляр <see cref="ProductsController"/>
+        /// Инициализирует экземпляр <see cref="ProductsController"/>.
         /// </summary>
-        /// <param name="logger">Логгер</param>
-        /// <param name="productService">Сервис товаров</param>
+        /// <param name="logger">Логгер.</param>
+        /// <param name="productService">Сервис товаров.</param>
         public ProductsController(ILogger<ProductsController> logger, IProductService productService)
         {
             _logger = logger;
@@ -34,9 +34,9 @@ namespace AspNetHomework.Controllers
         }
 
         /// <summary>
-        /// Получение перечня доступных товаров
+        /// Получение перечня доступных товаров.
         /// </summary>
-        /// <returns>Коллекция сущностей "Товары"</returns>
+        /// <returns>Коллекция сущностей "Товары".</returns>
         [HttpGet]
         [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(IEnumerable<ProductDTO>))]
         public IActionResult Get()

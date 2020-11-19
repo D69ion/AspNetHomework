@@ -5,14 +5,14 @@ using System.Text;
 namespace AspNetHomework.Database.Mocks
 {
     /// <summary>
-    /// Mock для коллекции сущностей "Товары"
+    /// Mock для коллекции сущностей "Товары".
     /// </summary>
     public class ProductMock
     {
         /// <summary>
-        /// Получение коллекции сущностей "Товары"
+        /// Получение коллекции сущностей "Товары".
         /// </summary>
-        /// <returns>Коллекция сущностей "Товары"</returns>
+        /// <returns>Коллекция сущностей "Товары".</returns>
         public static IEnumerable<Product> GetProducts()
         {
             return new List<Product>

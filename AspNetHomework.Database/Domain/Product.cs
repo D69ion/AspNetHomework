@@ -1,37 +1,37 @@
 ﻿namespace AspNetHomework.Database
 {
     /// <summary>
-    /// Товар
+    /// Товар.
     /// </summary>
     public class Product
     {
         /// <summary>
-        /// Идентификатор записи
+        /// Идентификатор записи.
         /// </summary>
         public long Id { get; set; }
 
         /// <summary>
-        /// Артикул
+        /// Артикул.
         /// </summary>
         public string VendorCode { get; set; }
 
         /// <summary>
-        /// Название
+        /// Название.
         /// </summary>
         public string Name { get; set; }
 
         /// <summary>
-        /// Описание
+        /// Описание.
         /// </summary>
         public string Description { get; set; }
 
         /// <summary>
-        /// Цена
+        /// Цена.
         /// </summary>
         public double Price { get; set; }
 
         /// <summary>
-        /// Вес в кг
+        /// Вес в кг.
         /// </summary>
         public double Weight { get; set; }
     }
