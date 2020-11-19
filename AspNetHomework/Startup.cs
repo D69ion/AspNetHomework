@@ -11,6 +11,10 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using AutoMapper;
+using AspNetHomework.Services.Bootstrap;
+using AspNetHomework.Services.Services;
+using System.Reflection;
 
 namespace AspNetHomework
 {
@@ -27,6 +31,8 @@ namespace AspNetHomework
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+            services.ConfigureServices();
+            services.AddAutoMapper(typeof(ProductService).GetTypeInfo().Assembly);
             services.ConfigureSwagger();
         }
 

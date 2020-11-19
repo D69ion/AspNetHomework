@@ -7,7 +7,7 @@ namespace AspNetHomework.Database.Mocks
     /// <summary>
     /// Mock для коллекции сущностей "Товары"
     /// </summary>
-    class ProductMock
+    public class ProductMock
     {
         /// <summary>
         /// Получение коллекции сущностей "Товары"

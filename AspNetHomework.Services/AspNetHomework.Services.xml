@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>AspNetHomework.Services</name>
+    </assembly>
+    <members>
+        <member name="T:AspNetHomework.Services.Bootstrap.ServicesConfiguration">
+            <summary>
+            Методы расширения для конфигурации сервисов
+            </summary>
+        </member>
+        <member name="M:AspNetHomework.Services.Bootstrap.ServicesConfiguration.ConfigureServices(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            Конфигурация сервисов
+            </summary>
+            <param name="services">Конфигурация сервисов из Startup</param>
+        </member>
+        <member name="T:AspNetHomework.Services.Interfaces.IProductService">
+            <summary>
+            Интерфейс сервиса для работы с данными о товарах 
+            </summary>
+        </member>
+        <member name="T:AspNetHomework.Services.ProductProfile">
+            <summary>
+            Профиль маппинга (товар)
+            </summary>
+        </member>
+        <member name="M:AspNetHomework.Services.ProductProfile.#ctor">
+            <summary>
+            Инициализарует экземпляр <see cref="T:AspNetHomework.Services.ProductProfile"/>
+            </summary>
+        </member>
+        <member name="T:AspNetHomework.Services.Services.ProductService">
+            <summary>
+            Сервис для работы с данными о товарах
+            </summary>
+        </member>
+        <member name="M:AspNetHomework.Services.Services.ProductService.Get">
+            <inheritdoc cref="T:AspNetHomework.Services.Interfaces.IProductService"/>
+        </member>
+    </members>
+</doc>

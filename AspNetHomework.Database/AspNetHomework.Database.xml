@@ -1,0 +1,54 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>AspNetHomework.Database</name>
+    </assembly>
+    <members>
+        <member name="T:AspNetHomework.Database.Product">
+            <summary>
+            Товар
+            </summary>
+        </member>
+        <member name="P:AspNetHomework.Database.Product.Id">
+            <summary>
+            Идентификатор записи
+            </summary>
+        </member>
+        <member name="P:AspNetHomework.Database.Product.VendorCode">
+            <summary>
+            Артикул
+            </summary>
+        </member>
+        <member name="P:AspNetHomework.Database.Product.Name">
+            <summary>
+            Название
+            </summary>
+        </member>
+        <member name="P:AspNetHomework.Database.Product.Description">
+            <summary>
+            Описание
+            </summary>
+        </member>
+        <member name="P:AspNetHomework.Database.Product.Price">
+            <summary>
+            Цена
+            </summary>
+        </member>
+        <member name="P:AspNetHomework.Database.Product.Weight">
+            <summary>
+            Вес в кг
+            </summary>
+        </member>
+        <member name="T:AspNetHomework.Database.Mocks.ProductMock">
+            <summary>
+            Mock для коллекции сущностей "Товары"
+            </summary>
+        </member>
+        <member name="M:AspNetHomework.Database.Mocks.ProductMock.GetProducts">
+            <summary>
+            Получение коллекции сущностей "Товары"
+            </summary>
+            <returns>Коллекция сущностей "Товары"</returns>
+        </member>
+    </members>
+</doc>
