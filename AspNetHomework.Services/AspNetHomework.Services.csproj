@@ -16,6 +16,7 @@
   <ItemGroup>
     <ProjectReference Include="..\AspNetHomework.Database\AspNetHomework.Database.csproj" />
     <ProjectReference Include="..\AspNetHomework.Models\AspNetHomework.Models.csproj" />
+    <ProjectReference Include="..\AspNetHomework.Repositories\AspNetHomework.Repositories.csproj" />
   </ItemGroup>
 
 </Project>
