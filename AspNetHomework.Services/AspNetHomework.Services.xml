@@ -95,46 +95,6 @@
             Интерфейс сервиса для работы с данными о магазинах.
             </summary>
         </member>
-        <member name="T:AspNetHomework.Services.Mapping.AvailabilityProfile">
-            <summary>
-            Профиль маппинга (наличие).
-            </summary>
-        </member>
-        <member name="M:AspNetHomework.Services.Mapping.AvailabilityProfile.#ctor">
-            <summary>
-            Инициализарует экземпляр <see cref="T:AspNetHomework.Services.Mapping.AvailabilityProfile"/>.
-            </summary>
-        </member>
-        <member name="T:AspNetHomework.Services.Mapping.ShopProfile">
-            <summary>
-            Профиль маппинга (магазин).
-            </summary>
-        </member>
-        <member name="M:AspNetHomework.Services.Mapping.ShopProfile.#ctor">
-            <summary>
-            Инициализарует экземпляр <see cref="T:AspNetHomework.Services.Mapping.ShopProfile"/>.
-            </summary>
-        </member>
-        <member name="T:AspNetHomework.Services.Mapping.VendorProfile">
-            <summary>
-            Профиль маппинга (поставщик).
-            </summary>
-        </member>
-        <member name="M:AspNetHomework.Services.Mapping.VendorProfile.#ctor">
-            <summary>
-            Инициализарует экземпляр <see cref="T:AspNetHomework.Services.Mapping.VendorProfile"/>.
-            </summary>
-        </member>
-        <member name="T:AspNetHomework.Services.ProductProfile">
-            <summary>
-            Профиль маппинга (товар).
-            </summary>
-        </member>
-        <member name="M:AspNetHomework.Services.ProductProfile.#ctor">
-            <summary>
-            Инициализарует экземпляр <see cref="T:AspNetHomework.Services.ProductProfile"/>.
-            </summary>
-        </member>
         <member name="T:AspNetHomework.Services.Services.ProductService">
             <summary>
             Сервис для работы с данными о товарах.
