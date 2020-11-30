@@ -6,7 +6,7 @@ namespace AspNetHomework.Models
     /// <summary>
     /// DTO для <see cref="Product"/>.
     /// </summary>
-    public class ProductDTO : BaseDTO
+    public class ProductDto : BaseDto
     {
         /// <summary>
         /// Артикул.

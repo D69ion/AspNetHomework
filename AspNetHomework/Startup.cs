@@ -10,6 +10,7 @@ using AspNetHomework.Services.Services;
 using System.Reflection;
 using AspNetHomework.Database.Bootstrap;
 using AspNetHomework.Repositories;
+using AspNetHomework.Controllers;
 
 namespace AspNetHomework
 {
@@ -29,7 +30,11 @@ namespace AspNetHomework
             services.ConfigureRepositories();
             services.AddControllers();
             services.ConfigureServices();
-            services.AddAutoMapper(typeof(ProductService).GetTypeInfo().Assembly);
+            services.AddAutoMapper(
+                typeof(ProductRepository).GetTypeInfo().Assembly,
+                typeof(ProductsController).GetTypeInfo().Assembly,
+                typeof(ShopRepository).GetTypeInfo().Assembly,
+                typeof(ShopsController).GetTypeInfo().Assembly);
             services.ConfigureSwagger();
         }
 

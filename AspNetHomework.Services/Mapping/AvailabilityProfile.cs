@@ -14,7 +14,7 @@ namespace AspNetHomework.Services.Mapping
         /// </summary>
         public AvailabilityProfile()
         {
-            CreateMap<Availability, AvailabilityDTO>().ReverseMap();
+            CreateMap<Availability, AvailabilityDto>().ReverseMap();
 
         }
     }

@@ -9,7 +9,7 @@ namespace AspNetHomework.Repositories
     /// <summary>
     /// Репозиторий для работы с сущностями "Товар".
     /// </summary>
-    public class ProductRepository : BaseRepository<ProductDTO, Product>, IProductRepository
+    public class ProductRepository : BaseRepository<ProductDto, Product>, IProductRepository
     {
         /// <summary>
         /// Инициализирует экземпляр <see cref="ProductRepository"/>.

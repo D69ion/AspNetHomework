@@ -3,7 +3,7 @@
     /// <summary>
     /// Базовый класс для DTO.
     /// </summary>
-    public abstract class BaseDTO
+    public abstract class BaseDto
     {
         /// <summary>
         /// Идентификатор записи.

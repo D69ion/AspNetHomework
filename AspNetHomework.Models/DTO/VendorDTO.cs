@@ -5,7 +5,7 @@ namespace AspNetHomework.Models.DTO
     /// <summary>
     /// DTO для <see cref="Vendor"/>.
     /// </summary>
-    public class VendorDTO : BaseDTO
+    public class VendorDto : BaseDto
     {
         /// <summary>
         /// Название поставщика.

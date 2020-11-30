@@ -6,37 +6,181 @@
     <members>
         <member name="T:AspNetHomework.Services.Bootstrap.ServicesConfiguration">
             <summary>
-            Методы расширения для конфигурации сервисов
+            Методы расширения для конфигурации сервисов.
             </summary>
         </member>
         <member name="M:AspNetHomework.Services.Bootstrap.ServicesConfiguration.ConfigureServices(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
             <summary>
-            Конфигурация сервисов
+            Конфигурация сервисов.
             </summary>
-            <param name="services">Конфигурация сервисов из Startup</param>
+            <param name="services">Конфигурация сервисов из Startup.</param>
+        </member>
+        <member name="T:AspNetHomework.Services.Interfaces.CRUD.ICreatable`1">
+            <summary>
+            Интерфейс сервиса для создания сущности.
+            </summary>
+            <typeparam name="TDto">DTO.</typeparam>
+        </member>
+        <member name="M:AspNetHomework.Services.Interfaces.CRUD.ICreatable`1.CreateAsync(`0)">
+            <summary>
+            Создание сущности.
+            </summary>
+            <param name="dto">DTO.</param>
+            <returns>Идентификатор созданной сущности.</returns>
+        </member>
+        <member name="T:AspNetHomework.Services.Interfaces.CRUD.ICrudService`1">
+            <summary>
+            Интерфейс сервиса с базовыми CRUD-операциями.
+            </summary>
+            <typeparam name="TDto">DTO.</typeparam>
+        </member>
+        <member name="T:AspNetHomework.Services.Interfaces.CRUD.IDeletable">
+            <summary>
+            Интерфейс сервиса для удаления сущностей.
+            </summary>
+        </member>
+        <member name="M:AspNetHomework.Services.Interfaces.CRUD.IDeletable.DeleteAsync(System.Int64[])">
+            <summary>
+            Групповое удаление сущностей.
+            </summary>
+            <param name="ids">Идентификаторы.</param>
+            <returns>Задача, представляющая асинхронную операцию.</returns>
+        </member>
+        <member name="T:AspNetHomework.Services.Interfaces.CRUD.IGettable`1">
+            <summary>
+            Интерфейс сервиса для получения сущностей.
+            </summary>
+            <typeparam name="TDto">DTO.</typeparam>    
+        </member>
+        <member name="M:AspNetHomework.Services.Interfaces.CRUD.IGettable`1.GetAsync(System.Threading.CancellationToken)">
+            <summary>
+            Получение сущностей.
+            </summary>
+            <param name="token">Экземпляр <see cref="T:System.Threading.CancellationToken"/>.</param>
+            <returns>Сущности.</returns>
+        </member>
+        <member name="T:AspNetHomework.Services.Interfaces.CRUD.IGettableById`1">
+            <summary>
+            Интерфейс сервиса для получения сущности по идентификатору.
+            </summary>
+            <typeparam name="TDto">DTO.</typeparam>
+        </member>
+        <member name="M:AspNetHomework.Services.Interfaces.CRUD.IGettableById`1.GetAsync(System.Int64)">
+            <summary>
+            Получение сущности по идентификатору.
+            </summary>
+            <param name="id">Идентификатор.</param>
+            <returns>Экземпляр сущности.</returns>
+        </member>
+        <member name="T:AspNetHomework.Services.Interfaces.CRUD.IUpdatable`1">
+            <summary>
+            Интерфейс сервиса для изменения сущности.
+            </summary>
+            <typeparam name="TDto">DTO.</typeparam>
+        </member>
+        <member name="M:AspNetHomework.Services.Interfaces.CRUD.IUpdatable`1.UpdateAsync(`0)">
+            <summary>
+            Изменение сущности.
+            </summary>
+            <param name="dto">DTO.</param>
+            <returns>Обновленная сущность.</returns>
         </member>
         <member name="T:AspNetHomework.Services.Interfaces.IProductService">
             <summary>
-            Интерфейс сервиса для работы с данными о товарах 
+            Интерфейс сервиса для работы с данными о товарах.
+            </summary>
+        </member>
+        <member name="T:AspNetHomework.Services.Interfaces.IShopService">
+            <summary>
+            Интерфейс сервиса для работы с данными о магазинах.
+            </summary>
+        </member>
+        <member name="T:AspNetHomework.Services.Mapping.AvailabilityProfile">
+            <summary>
+            Профиль маппинга (наличие).
+            </summary>
+        </member>
+        <member name="M:AspNetHomework.Services.Mapping.AvailabilityProfile.#ctor">
+            <summary>
+            Инициализарует экземпляр <see cref="T:AspNetHomework.Services.Mapping.AvailabilityProfile"/>.
+            </summary>
+        </member>
+        <member name="T:AspNetHomework.Services.Mapping.ShopProfile">
+            <summary>
+            Профиль маппинга (магазин).
+            </summary>
+        </member>
+        <member name="M:AspNetHomework.Services.Mapping.ShopProfile.#ctor">
+            <summary>
+            Инициализарует экземпляр <see cref="T:AspNetHomework.Services.Mapping.ShopProfile"/>.
+            </summary>
+        </member>
+        <member name="T:AspNetHomework.Services.Mapping.VendorProfile">
+            <summary>
+            Профиль маппинга (поставщик).
+            </summary>
+        </member>
+        <member name="M:AspNetHomework.Services.Mapping.VendorProfile.#ctor">
+            <summary>
+            Инициализарует экземпляр <see cref="T:AspNetHomework.Services.Mapping.VendorProfile"/>.
             </summary>
         </member>
         <member name="T:AspNetHomework.Services.ProductProfile">
             <summary>
-            Профиль маппинга (товар)
+            Профиль маппинга (товар).
             </summary>
         </member>
         <member name="M:AspNetHomework.Services.ProductProfile.#ctor">
             <summary>
-            Инициализарует экземпляр <see cref="T:AspNetHomework.Services.ProductProfile"/>
+            Инициализарует экземпляр <see cref="T:AspNetHomework.Services.ProductProfile"/>.
             </summary>
         </member>
         <member name="T:AspNetHomework.Services.Services.ProductService">
             <summary>
-            Сервис для работы с данными о товарах
+            Сервис для работы с данными о товарах.
             </summary>
         </member>
-        <member name="M:AspNetHomework.Services.Services.ProductService.Get">
-            <inheritdoc cref="T:AspNetHomework.Services.Interfaces.IProductService"/>
+        <member name="M:AspNetHomework.Services.Services.ProductService.#ctor(AspNetHomework.Repositories.Interfaces.IProductRepository)">
+            <summary>
+            Инициализирует экземпляр <see cref="T:AspNetHomework.Services.Services.ProductService"/>.
+            </summary>
+            <param name="repository">Репозиторий.</param>
+        </member>
+        <member name="M:AspNetHomework.Services.Services.ProductService.CreateAsync(AspNetHomework.Models.ProductDto)">
+            <inheritdoc cref="M:AspNetHomework.Services.Interfaces.CRUD.ICreatable`1.CreateAsync(`0)"/>
+        </member>
+        <member name="M:AspNetHomework.Services.Services.ProductService.DeleteAsync(System.Int64[])">
+            <inheritdoc cref="M:AspNetHomework.Services.Interfaces.CRUD.IDeletable.DeleteAsync(System.Int64[])"/>
+        </member>
+        <member name="M:AspNetHomework.Services.Services.ProductService.GetAsync(System.Threading.CancellationToken)">
+            <inheritdoc cref="M:AspNetHomework.Services.Interfaces.CRUD.IGettable`1.GetAsync(System.Threading.CancellationToken)"/>
+        </member>
+        <member name="M:AspNetHomework.Services.Services.ProductService.GetAsync(System.Int64)">
+            <inheritdoc cref="M:AspNetHomework.Services.Interfaces.CRUD.IGettableById`1.GetAsync(System.Int64)"/>
+        </member>
+        <member name="M:AspNetHomework.Services.Services.ProductService.UpdateAsync(AspNetHomework.Models.ProductDto)">
+            <inheritdoc cref="M:AspNetHomework.Services.Interfaces.CRUD.IUpdatable`1.UpdateAsync(`0)"/>
+        </member>
+        <member name="T:AspNetHomework.Services.Services.ShopService">
+            <summary>
+            Сервис для работы с данными о магазинах.
+            </summary>
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:AspNetHomework.Services.Services.ShopService.#ctor(AspNetHomework.Repositories.Interfaces.IShopRepository)" -->
+        <member name="M:AspNetHomework.Services.Services.ShopService.CreateAsync(AspNetHomework.Models.DTO.ShopDto)">
+            <inheritdoc cref="M:AspNetHomework.Services.Interfaces.CRUD.ICreatable`1.CreateAsync(`0)"/>
+        </member>
+        <member name="M:AspNetHomework.Services.Services.ShopService.DeleteAsync(System.Int64[])">
+            <inheritdoc cref="M:AspNetHomework.Services.Interfaces.CRUD.IDeletable.DeleteAsync(System.Int64[])"/>
+        </member>
+        <member name="M:AspNetHomework.Services.Services.ShopService.GetAsync(System.Threading.CancellationToken)">
+            <inheritdoc cref="M:AspNetHomework.Services.Interfaces.CRUD.IGettable`1.GetAsync(System.Threading.CancellationToken)"/>
+        </member>
+        <member name="M:AspNetHomework.Services.Services.ShopService.GetAsync(System.Int64)">
+            <inheritdoc cref="M:AspNetHomework.Services.Interfaces.CRUD.IGettableById`1.GetAsync(System.Int64)"/>
+        </member>
+        <member name="M:AspNetHomework.Services.Services.ShopService.UpdateAsync(AspNetHomework.Models.DTO.ShopDto)">
+            <inheritdoc cref="M:AspNetHomework.Services.Interfaces.CRUD.IUpdatable`1.UpdateAsync(`0)"/>
         </member>
     </members>
 </doc>

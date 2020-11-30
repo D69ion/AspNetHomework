@@ -4,34 +4,229 @@
         <name>AspNetHomework.Models</name>
     </assembly>
     <members>
-        <member name="T:AspNetHomework.Models.ProductDTO">
+        <member name="T:AspNetHomework.Models.DTO.AvailabilityDto">
             <summary>
-            DTO для <see cref="T:AspNetHomework.Database.Product"/>
+            DTO для <see cref="T:AspNetHomework.Database.Domain.Availability"/>.
             </summary>
         </member>
-        <member name="P:AspNetHomework.Models.ProductDTO.VendorCode">
+        <member name="P:AspNetHomework.Models.DTO.AvailabilityDto.Shop">
             <summary>
-            Артикул
+            Магазин.
             </summary>
         </member>
-        <member name="P:AspNetHomework.Models.ProductDTO.Name">
+        <member name="P:AspNetHomework.Models.DTO.AvailabilityDto.Product">
             <summary>
-            Название
+            Товар.
             </summary>
         </member>
-        <member name="P:AspNetHomework.Models.ProductDTO.Description">
+        <member name="P:AspNetHomework.Models.DTO.AvailabilityDto.Count">
             <summary>
-            Описание
+            Кол-во оставшегося товара.
             </summary>
         </member>
-        <member name="P:AspNetHomework.Models.ProductDTO.Price">
+        <member name="T:AspNetHomework.Models.DTO.BaseDto">
             <summary>
-            Цена
+            Базовый класс для DTO.
             </summary>
         </member>
-        <member name="P:AspNetHomework.Models.ProductDTO.Weight">
+        <member name="P:AspNetHomework.Models.DTO.BaseDto.Id">
             <summary>
-            Вес в кг
+            Идентификатор записи.
+            </summary>
+        </member>
+        <member name="T:AspNetHomework.Models.DTO.ShopDto">
+            <summary>
+            DTO для <see cref="T:AspNetHomework.Database.Domain.Shop"/>.
+            </summary>
+        </member>
+        <member name="P:AspNetHomework.Models.DTO.ShopDto.ShopName">
+            <summary>
+            Название магазина.
+            </summary>
+        </member>
+        <member name="P:AspNetHomework.Models.DTO.ShopDto.Address">
+            <summary>
+            Адрес магазина.
+            </summary>
+        </member>
+        <member name="T:AspNetHomework.Models.DTO.VendorDto">
+            <summary>
+            DTO для <see cref="T:AspNetHomework.Database.Domain.Vendor"/>.
+            </summary>
+        </member>
+        <member name="P:AspNetHomework.Models.DTO.VendorDto.Name">
+            <summary>
+            Название поставщика.
+            </summary>
+        </member>
+        <member name="P:AspNetHomework.Models.DTO.VendorDto.Address">
+            <summary>
+            Адрес.
+            </summary>
+        </member>
+        <member name="T:AspNetHomework.Models.ProductDto">
+            <summary>
+            DTO для <see cref="T:AspNetHomework.Database.Product"/>.
+            </summary>
+        </member>
+        <member name="P:AspNetHomework.Models.ProductDto.VendorCode">
+            <summary>
+            Артикул.
+            </summary>
+        </member>
+        <member name="P:AspNetHomework.Models.ProductDto.Name">
+            <summary>
+            Название.
+            </summary>
+        </member>
+        <member name="P:AspNetHomework.Models.ProductDto.Description">
+            <summary>
+            Описание.
+            </summary>
+        </member>
+        <member name="P:AspNetHomework.Models.ProductDto.Price">
+            <summary>
+            Цена.
+            </summary>
+        </member>
+        <member name="P:AspNetHomework.Models.ProductDto.Weight">
+            <summary>
+            Вес в кг.
+            </summary>
+        </member>
+        <member name="P:AspNetHomework.Models.ProductDto.Vendor">
+            <summary>
+            Поставщик.
+            </summary>
+        </member>
+        <member name="T:AspNetHomework.Models.Requests.Product.CreateProductRequest">
+            <summary>
+            Запрос на создание позиции товара.
+            </summary>
+        </member>
+        <member name="P:AspNetHomework.Models.Requests.Product.CreateProductRequest.VendorCode">
+            <summary>
+            Артикул.
+            </summary>
+        </member>
+        <member name="P:AspNetHomework.Models.Requests.Product.CreateProductRequest.Name">
+            <summary>
+            Название.
+            </summary>
+        </member>
+        <member name="P:AspNetHomework.Models.Requests.Product.CreateProductRequest.Description">
+            <summary>
+            Описание.
+            </summary>
+        </member>
+        <member name="P:AspNetHomework.Models.Requests.Product.CreateProductRequest.Price">
+            <summary>
+            Цена.
+            </summary>
+        </member>
+        <member name="P:AspNetHomework.Models.Requests.Product.CreateProductRequest.Weight">
+            <summary>
+            Вес в кг.
+            </summary>
+        </member>
+        <member name="P:AspNetHomework.Models.Requests.Product.CreateProductRequest.Vendor">
+            <summary>
+            Поставщик.
+            </summary>
+        </member>
+        <member name="T:AspNetHomework.Models.Requests.Product.UpdateProductRequest">
+            <summary>
+            Запрос на изменение позиции товара.
+            </summary>
+        </member>
+        <member name="P:AspNetHomework.Models.Requests.Product.UpdateProductRequest.Id">
+            <summary>
+            Идентификатор сущности.
+            </summary>
+        </member>
+        <member name="T:AspNetHomework.Models.Requests.Shop.CreateShopRequest">
+            <summary>
+            Запрос на создание записи о магазине.
+            </summary>
+        </member>
+        <member name="P:AspNetHomework.Models.Requests.Shop.CreateShopRequest.ShopName">
+            <summary>
+            Название магазина.
+            </summary>
+        </member>
+        <member name="P:AspNetHomework.Models.Requests.Shop.CreateShopRequest.Address">
+            <summary>
+            Адрес магазина.
+            </summary>
+        </member>
+        <member name="T:AspNetHomework.Models.Requests.Shop.UpdateShopRequest">
+            <summary>
+            Запрос на изменение данных магазина.
+            </summary>
+        </member>
+        <member name="P:AspNetHomework.Models.Requests.Shop.UpdateShopRequest.Id">
+            <summary>
+            Идентификатор сущности.
+            </summary>
+        </member>
+        <member name="T:AspNetHomework.Models.Responses.Product.ProductResponse">
+            <summary>
+            Ответ на запросы для списка товаров.
+            </summary>
+        </member>
+        <member name="P:AspNetHomework.Models.Responses.Product.ProductResponse.Id">
+            <summary>
+            Идентификатор записи.
+            </summary>
+        </member>
+        <member name="P:AspNetHomework.Models.Responses.Product.ProductResponse.VendorCode">
+            <summary>
+            Артикул.
+            </summary>
+        </member>
+        <member name="P:AspNetHomework.Models.Responses.Product.ProductResponse.Name">
+            <summary>
+            Название.
+            </summary>
+        </member>
+        <member name="P:AspNetHomework.Models.Responses.Product.ProductResponse.Description">
+            <summary>
+            Описание.
+            </summary>
+        </member>
+        <member name="P:AspNetHomework.Models.Responses.Product.ProductResponse.Price">
+            <summary>
+            Цена.
+            </summary>
+        </member>
+        <member name="P:AspNetHomework.Models.Responses.Product.ProductResponse.Weight">
+            <summary>
+            Вес в кг.
+            </summary>
+        </member>
+        <member name="P:AspNetHomework.Models.Responses.Product.ProductResponse.Vendor">
+            <summary>
+            Поставщик.
+            </summary>
+        </member>
+        <member name="T:AspNetHomework.Models.Responses.Shop.ShopResponse">
+            <summary>
+            Ответ на запросы для списка магазинов.
+            </summary>
+        </member>
+        <member name="P:AspNetHomework.Models.Responses.Shop.ShopResponse.Id">
+            <summary>
+            Идентификатор записи.
+            </summary>
+        </member>
+        <member name="P:AspNetHomework.Models.Responses.Shop.ShopResponse.ShopName">
+            <summary>
+            Название магазина.
+            </summary>
+        </member>
+        <member name="P:AspNetHomework.Models.Responses.Shop.ShopResponse.Address">
+            <summary>
+            Адрес магазина.
             </summary>
         </member>
     </members>

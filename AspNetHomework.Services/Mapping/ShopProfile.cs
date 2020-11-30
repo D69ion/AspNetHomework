@@ -14,7 +14,7 @@ namespace AspNetHomework.Services.Mapping
         /// </summary>
         public ShopProfile()
         {
-            CreateMap<Shop, ShopDTO>().ReverseMap();
+            CreateMap<Shop, ShopDto>().ReverseMap();
         }
     }
 }

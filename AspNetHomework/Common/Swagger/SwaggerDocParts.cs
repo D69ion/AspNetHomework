@@ -9,5 +9,10 @@
         /// Коснтанта для swagger-документа "Товар".
         /// </summary>
         public const string Product = nameof(Product);
+
+        /// <summary>
+        /// Коснтанта для swagger-документа "Магазин".
+        /// </summary>
+        public const string Shop = nameof(Shop);
     }
 }

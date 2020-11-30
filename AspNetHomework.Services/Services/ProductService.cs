@@ -25,7 +25,7 @@ namespace AspNetHomework.Services.Services
         }
 
         ///<inheritdoc cref="ICreatable{TDto}.CreateAsync(TDto)"/>
-        public async Task<ProductDTO> CreateAsync(ProductDTO dto)
+        public async Task<ProductDto> CreateAsync(ProductDto dto)
         {
             return await _repository.CreateAsync(dto);
         }
@@ -37,19 +37,19 @@ namespace AspNetHomework.Services.Services
         }
 
         ///<inheritdoc cref="IGettable{TDto}.GetAsync(CancellationToken)"/>
-        public async Task<IEnumerable<ProductDTO>> GetAsync(CancellationToken token = default)
+        public async Task<IEnumerable<ProductDto>> GetAsync(CancellationToken token = default)
         {
             return await _repository.GetAsync(token);
         }
 
         ///<inheritdoc cref="IGettableById{TDto}.GetAsync(long)"/>
-        public async Task<ProductDTO> GetAsync(long id)
+        public async Task<ProductDto> GetAsync(long id)
         {
             return await _repository.GetAsync(id);
         }
 
         ///<inheritdoc cref="IUpdatable{TDto}.UpdateAsync(TDto)"/>
-        public async Task<ProductDTO> UpdateAsync(ProductDTO dto)
+        public async Task<ProductDto> UpdateAsync(ProductDto dto)
         {
             return await _repository.UpdateAsync(dto);
         }
