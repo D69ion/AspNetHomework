@@ -9,6 +9,7 @@ using AspNetHomework.Services.Bootstrap;
 using AspNetHomework.Services.Services;
 using System.Reflection;
 using AspNetHomework.Database.Bootstrap;
+using AspNetHomework.Repositories;
 
 namespace AspNetHomework
 {
@@ -25,6 +26,7 @@ namespace AspNetHomework
         public void ConfigureServices(IServiceCollection services)
         {
             services.ConfigureDb(Configuration);
+            services.ConfigureRepositories();
             services.AddControllers();
             services.ConfigureServices();
             services.AddAutoMapper(typeof(ProductService).GetTypeInfo().Assembly);

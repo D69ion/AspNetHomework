@@ -32,9 +32,9 @@ namespace AspNetHomework.Database.Contexts
         public DbSet<Vendor> Vendors { get; set; }
 
         /// <summary>
-        /// Инициализирует экземпляр <see cref="AspNetHomeworkContext"/>
+        /// Инициализирует экземпляр <see cref="AspNetHomeworkContext"/>.
         /// </summary>
-        /// <param name="options"></param>
+        /// <param name="options">Опции для конфигурации контекста.</param>
         public AspNetHomeworkContext(DbContextOptions options) : base(options)
         {
             Database.EnsureCreated();
