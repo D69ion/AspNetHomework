@@ -1,31 +1,31 @@
-﻿using AspNetHomework.Models;
-using AspNetHomework.Services.Interfaces;
-using System.Collections.Generic;
+﻿using AspNetHomework.Models.DTO;
 using AspNetHomework.Repositories.Interfaces;
-using System.Threading.Tasks;
-using System.Threading;
+using AspNetHomework.Services.Interfaces;
 using AspNetHomework.Services.Interfaces.CRUD;
+using System.Collections.Generic;
+using System.Threading;
+using System.Threading.Tasks;
 
 namespace AspNetHomework.Services.Services
 {
     /// <summary>
-    /// Сервис для работы с данными о товарах.
+    /// Сервис для работы с данными о магазинах.
     /// </summary>
-    public class ProductService : IProductService
+    public class ShopService : IShopService
     {
-        private readonly IProductRepository _repository;
+        private readonly IShopRepository _repository;
 
         /// <summary>
-        /// Инициализирует экземпляр <see cref="ProductService"/>.
+        /// Инициализирует экземпляр <see cref="ShopService/>.
         /// </summary>
         /// <param name="repository">Репозиторий.</param>
-        public ProductService(IProductRepository repository)
+        public ShopService(IShopRepository repository)
         {
             _repository = repository;
         }
 
         ///<inheritdoc cref="ICreatable{TDto}.CreateAsync(TDto)"/>
-        public async Task<ProductDTO> CreateAsync(ProductDTO dto)
+        public async Task<ShopDTO> CreateAsync(ShopDTO dto)
         {
             return await _repository.CreateAsync(dto);
         }
@@ -37,19 +37,19 @@ namespace AspNetHomework.Services.Services
         }
 
         ///<inheritdoc cref="IGettable{TDto}.GetAsync(CancellationToken)"/>
-        public async Task<IEnumerable<ProductDTO>> GetAsync(CancellationToken token = default)
+        public async Task<IEnumerable<ShopDTO>> GetAsync(CancellationToken token = default)
         {
             return await _repository.GetAsync(token);
         }
 
         ///<inheritdoc cref="IGettableById{TDto}.GetAsync(long)"/>
-        public async Task<ProductDTO> GetAsync(long id)
+        public async Task<ShopDTO> GetAsync(long id)
         {
             return await _repository.GetAsync(id);
         }
 
         ///<inheritdoc cref="IUpdatable{TDto}.UpdateAsync(TDto)"/>
-        public async Task<ProductDTO> UpdateAsync(ProductDTO dto)
+        public async Task<ShopDTO> UpdateAsync(ShopDTO dto)
         {
             return await _repository.UpdateAsync(dto);
         }

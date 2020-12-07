@@ -17,6 +17,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\AspNetHomework.Repositories\AspNetHomework.Repositories.csproj" />
     <ProjectReference Include="..\AspNetHomework.Services\AspNetHomework.Services.csproj" />
   </ItemGroup>
 
