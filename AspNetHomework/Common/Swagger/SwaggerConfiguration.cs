@@ -17,7 +17,14 @@ namespace AspNetHomework.Common.Swagger
             {
                 c.Title = "Product";
                 c.DocumentName = SwaggerDocParts.Product;
-                c.ApiGroupNames = new[] { SwaggerDocParts.Product};
+                c.ApiGroupNames = new[] { SwaggerDocParts.Product };
+                c.GenerateXmlObjects = true;
+            })
+            .AddSwaggerDocument(c =>
+            {
+                c.Title = "Shop";
+                c.DocumentName = SwaggerDocParts.Shop;
+                c.ApiGroupNames = new[] { SwaggerDocParts.Shop };
                 c.GenerateXmlObjects = true;
             });
         }

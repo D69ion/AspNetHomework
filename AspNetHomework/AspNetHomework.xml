@@ -6,42 +6,137 @@
     <members>
         <member name="T:AspNetHomework.Common.Swagger.SwaggerConfiguration">
             <summary>
-            Расширения для конфигурации Swagger
+            Расширения для конфигурации Swagger.
             </summary>
         </member>
         <member name="M:AspNetHomework.Common.Swagger.SwaggerConfiguration.ConfigureSwagger(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
             <summary>
             Настройка документов Swagger.
             </summary>
-            <param name="services">Коллекция сервисов для DI</param>
+            <param name="services">Коллекция сервисов для DI.</param>
         </member>
         <member name="T:AspNetHomework.Common.Swagger.SwaggerDocParts">
             <summary>
-            Константы для указания частей API в Swagger
+            Константы для указания частей API в Swagger.
             </summary>
         </member>
         <member name="F:AspNetHomework.Common.Swagger.SwaggerDocParts.Product">
             <summary>
-            Коснтанта для swagger-документа "Товар"
+            Коснтанта для swagger-документа "Товар".
+            </summary>
+        </member>
+        <member name="F:AspNetHomework.Common.Swagger.SwaggerDocParts.Shop">
+            <summary>
+            Коснтанта для swagger-документа "Магазин".
+            </summary>
+        </member>
+        <member name="T:AspNetHomework.Controllers.Mappings.ProductProfile">
+            <summary>
+            Маппинг для запросов и ответов контроллера сущности "Товар".
+            </summary>
+        </member>
+        <member name="M:AspNetHomework.Controllers.Mappings.ProductProfile.#ctor">
+            <summary>
+            Инициализирует экземпляр <see cref="T:AspNetHomework.Controllers.Mappings.ProductProfile"/>.
+            </summary>
+        </member>
+        <member name="T:AspNetHomework.Controllers.Mappings.ShopProfile">
+            <summary>
+            Маппинг для запросов и ответов контроллера сущности "Товар".
+            </summary>
+        </member>
+        <member name="M:AspNetHomework.Controllers.Mappings.ShopProfile.#ctor">
+            <summary>
+            Инициализирует экземпляр <see cref="T:AspNetHomework.Controllers.Mappings.ShopProfile"/>.
             </summary>
         </member>
         <member name="T:AspNetHomework.Controllers.ProductsController">
             <summary>
-            Контроллер для работы с данными об одежде
+            Контроллер для работы с данными об одежде.
             </summary>
         </member>
-        <member name="M:AspNetHomework.Controllers.ProductsController.#ctor(Microsoft.Extensions.Logging.ILogger{AspNetHomework.Controllers.ProductsController},AspNetHomework.Services.Interfaces.IProductService)">
+        <member name="M:AspNetHomework.Controllers.ProductsController.#ctor(Microsoft.Extensions.Logging.ILogger{AspNetHomework.Controllers.ProductsController},AspNetHomework.Services.Interfaces.IProductService,AutoMapper.IMapper)">
             <summary>
-            Инициализирует экземпляр <see cref="T:AspNetHomework.Controllers.ProductsController"/>
+            Инициализирует экземпляр <see cref="T:AspNetHomework.Controllers.ProductsController"/>.
             </summary>
-            <param name="logger">Логгер</param>
-            <param name="productService">Сервис товаров</param>
+            <param name="logger">Логгер.</param>
+            <param name="productService">Сервис товаров.</param>
+            <param name="mapper">Маппер</param>
         </member>
-        <member name="M:AspNetHomework.Controllers.ProductsController.Get">
+        <member name="M:AspNetHomework.Controllers.ProductsController.GetAsync(System.Threading.CancellationToken)">
             <summary>
-            Получение перечня доступных товаров
+            Получение перечня доступных товаров.
             </summary>
-            <returns>Коллекция сущностей "Товары"</returns>
+            <returns>Коллекция сущностей "Товары".</returns>
+        </member>
+        <member name="M:AspNetHomework.Controllers.ProductsController.GetByIdAsync(System.Int64)">
+            <summary>
+            Получение товара по id.
+            </summary>
+            <param name="id">Id товара.</param>
+            <returns>Сущность "Товар".</returns>
+        </member>
+        <member name="M:AspNetHomework.Controllers.ProductsController.PostAsync(AspNetHomework.Models.Requests.Product.CreateProductRequest)">
+            <summary>
+            Добавление сущности "Товар".
+            </summary>
+            <param name="request">Запрос на добавление сущности.</param>
+            <returns>Сущность "Товар".</returns>
+        </member>
+        <member name="M:AspNetHomework.Controllers.ProductsController.PutAsync(AspNetHomework.Models.Requests.Product.UpdateProductRequest)">
+            <summary>
+            Изменение сущности "Товар".
+            </summary>
+            <returns>Cущность "Товар".</returns>
+        </member>
+        <member name="M:AspNetHomework.Controllers.ProductsController.DeleteAsync(System.Int64[])">
+            <summary>
+            Удаление сущностей "Товар".
+            </summary>
+        </member>
+        <member name="T:AspNetHomework.Controllers.ShopsController">
+            <summary>
+            Контроллер для работы с данными об одежде.
+            </summary>
+        </member>
+        <member name="M:AspNetHomework.Controllers.ShopsController.#ctor(Microsoft.Extensions.Logging.ILogger{AspNetHomework.Controllers.ShopsController},AspNetHomework.Services.Interfaces.IShopService,AutoMapper.IMapper)">
+            <summary>
+            Инициализирует экземпляр <see cref="T:AspNetHomework.Controllers.ShopsController"/>.
+            </summary>
+            <param name="logger">Логгер.</param>
+            <param name="shopService">Сервис магазинов.</param>
+            <param name="mapper">Маппер</param>
+        </member>
+        <member name="M:AspNetHomework.Controllers.ShopsController.GetAsync(System.Threading.CancellationToken)">
+            <summary>
+            Получение перечня магазинов.
+            </summary>
+            <returns>Коллекция сущностей "Магазины".</returns>
+        </member>
+        <member name="M:AspNetHomework.Controllers.ShopsController.GetByIdAsync(System.Int64)">
+            <summary>
+            Получение магазина по id.
+            </summary>
+            <param name="id">Id магазина.</param>
+            <returns>Сущность "Магазин".</returns>
+        </member>
+        <member name="M:AspNetHomework.Controllers.ShopsController.PostAsync(AspNetHomework.Models.Requests.Shop.CreateShopRequest)">
+            <summary>
+            Добавление сущности "Магазин".
+            </summary>
+            <param name="request">Запрос на добавление сущности.</param>
+            <returns>Сущность "Магазин".</returns>
+        </member>
+        <member name="M:AspNetHomework.Controllers.ShopsController.PutAsync(AspNetHomework.Models.Requests.Shop.UpdateShopRequest)">
+            <summary>
+            Изменение сущности "Магазин".
+            </summary>
+            <returns>Cущность "Магазин".</returns>
+        </member>
+        <member name="M:AspNetHomework.Controllers.ShopsController.DeleteAsync(System.Int64[])">
+            <summary>
+            Удаление сущностей "Магазин".
+            </summary>
         </member>
     </members>
 </doc>

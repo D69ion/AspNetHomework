@@ -16,6 +16,7 @@ namespace AspNetHomework.Services.Bootstrap
         public static void ConfigureServices(this IServiceCollection services)
         {
             services.AddTransient<IProductService, ProductService>();
+            services.AddTransient<IShopService, ShopService>();
         }
     }
 }

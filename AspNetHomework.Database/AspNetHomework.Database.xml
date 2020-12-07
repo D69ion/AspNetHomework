@@ -4,51 +4,154 @@
         <name>AspNetHomework.Database</name>
     </assembly>
     <members>
-        <member name="T:AspNetHomework.Database.Product">
+        <member name="T:AspNetHomework.Database.Bootstrap.DbConfigurations">
             <summary>
-            Товар
+            Конфигурация БД.
             </summary>
         </member>
-        <member name="P:AspNetHomework.Database.Product.Id">
+        <member name="M:AspNetHomework.Database.Bootstrap.DbConfigurations.ConfigureDb(Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.Extensions.Configuration.IConfiguration)">
             <summary>
-            Идентификатор записи
+            Подключение DbContext.
+            </summary>
+            <param name="services">Коллекция сервисов.</param>
+            <param name="configuration">Конфигурация.</param>
+        </member>
+        <member name="T:AspNetHomework.Database.Contexts.AspNetHomeworkContext">
+            <summary>
+            Контекст для работы с данными БД "Магазин продуктов".
+            </summary>
+        </member>
+        <member name="P:AspNetHomework.Database.Contexts.AspNetHomeworkContext.Availabilities">
+            <summary>
+            Наличие в магазинах.
+            </summary>
+        </member>
+        <member name="P:AspNetHomework.Database.Contexts.AspNetHomeworkContext.Products">
+            <summary>
+            Товары.
+            </summary>
+        </member>
+        <member name="P:AspNetHomework.Database.Contexts.AspNetHomeworkContext.Shops">
+            <summary>
+            Магазины.
+            </summary>
+        </member>
+        <member name="P:AspNetHomework.Database.Contexts.AspNetHomeworkContext.Vendors">
+            <summary>
+            Поставщики.
+            </summary>
+        </member>
+        <member name="M:AspNetHomework.Database.Contexts.AspNetHomeworkContext.#ctor(Microsoft.EntityFrameworkCore.DbContextOptions)">
+            <summary>
+            Инициализирует экземпляр <see cref="T:AspNetHomework.Database.Contexts.AspNetHomeworkContext"/>.
+            </summary>
+            <param name="options">Опции для конфигурации контекста.</param>
+        </member>
+        <member name="T:AspNetHomework.Database.Domain.Availability">
+            <summary>
+            Наличие товара в магазине.
+            </summary>
+        </member>
+        <member name="P:AspNetHomework.Database.Domain.Availability.Shop">
+            <summary>
+            Магазин.
+            </summary>
+        </member>
+        <member name="P:AspNetHomework.Database.Domain.Availability.Product">
+            <summary>
+            Товар.
+            </summary>
+        </member>
+        <member name="P:AspNetHomework.Database.Domain.Availability.Count">
+            <summary>
+            Кол-во оставшегося товара.
+            </summary>
+        </member>
+        <member name="T:AspNetHomework.Database.Domain.BaseEntity">
+            <summary>
+            Базовый класс для доменных моделей.
+            </summary>
+        </member>
+        <member name="P:AspNetHomework.Database.Domain.BaseEntity.Id">
+            <summary>
+            Идентификатор записи.
+            </summary>
+        </member>
+        <member name="T:AspNetHomework.Database.Domain.Shop">
+            <summary>
+            Магазин.
+            </summary>
+        </member>
+        <member name="P:AspNetHomework.Database.Domain.Shop.ShopName">
+            <summary>
+            Название магазина.
+            </summary>
+        </member>
+        <member name="P:AspNetHomework.Database.Domain.Shop.Address">
+            <summary>
+            Адрес магазина.
+            </summary>
+        </member>
+        <member name="T:AspNetHomework.Database.Domain.Vendor">
+            <summary>
+            Поставщик.
+            </summary>
+        </member>
+        <member name="P:AspNetHomework.Database.Domain.Vendor.Name">
+            <summary>
+            Название поставщика.
+            </summary>
+        </member>
+        <member name="P:AspNetHomework.Database.Domain.Vendor.Address">
+            <summary>
+            Адрес.
+            </summary>
+        </member>
+        <member name="T:AspNetHomework.Database.Product">
+            <summary>
+            Товар.
             </summary>
         </member>
         <member name="P:AspNetHomework.Database.Product.VendorCode">
             <summary>
-            Артикул
+            Артикул.
             </summary>
         </member>
         <member name="P:AspNetHomework.Database.Product.Name">
             <summary>
-            Название
+            Название.
             </summary>
         </member>
         <member name="P:AspNetHomework.Database.Product.Description">
             <summary>
-            Описание
+            Описание.
             </summary>
         </member>
         <member name="P:AspNetHomework.Database.Product.Price">
             <summary>
-            Цена
+            Цена.
             </summary>
         </member>
         <member name="P:AspNetHomework.Database.Product.Weight">
             <summary>
-            Вес в кг
+            Вес в кг.
+            </summary>
+        </member>
+        <member name="P:AspNetHomework.Database.Product.Vendor">
+            <summary>
+            Поставщик.
             </summary>
         </member>
         <member name="T:AspNetHomework.Database.Mocks.ProductMock">
             <summary>
-            Mock для коллекции сущностей "Товары"
+            Mock для коллекции сущностей "Товары".
             </summary>
         </member>
         <member name="M:AspNetHomework.Database.Mocks.ProductMock.GetProducts">
             <summary>
-            Получение коллекции сущностей "Товары"
+            Получение коллекции сущностей "Товары".
             </summary>
-            <returns>Коллекция сущностей "Товары"</returns>
+            <returns>Коллекция сущностей "Товары".</returns>
         </member>
     </members>
 </doc>

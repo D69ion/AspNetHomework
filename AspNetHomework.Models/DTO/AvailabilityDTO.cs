@@ -5,7 +5,7 @@ namespace AspNetHomework.Models.DTO
     /// <summary>
     /// DTO для <see cref="Availability"/>.
     /// </summary>
-    public class AvailabilityDTO : BaseDTO
+    public class AvailabilityDto : BaseDto
     {
         /// <summary>
         /// Магазин.

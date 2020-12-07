@@ -7,7 +7,7 @@ namespace AspNetHomework.Repositories.Interfaces
     /// <summary>
     /// Интерфейс для работы с сущностями "Магазин".
     /// </summary>
-    public interface IShopRepository : ICrudRepository<ShopDTO, Shop>
+    public interface IShopRepository : ICrudRepository<ShopDto, Shop>
     {
     }
 }

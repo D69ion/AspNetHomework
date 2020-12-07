@@ -14,7 +14,7 @@ namespace AspNetHomework.Services.Mapping
         /// </summary>
         public VendorProfile()
         {
-            CreateMap<Vendor, VendorDTO>().ReverseMap();
+            CreateMap<Vendor, VendorDto>().ReverseMap();
         }
     }
 }

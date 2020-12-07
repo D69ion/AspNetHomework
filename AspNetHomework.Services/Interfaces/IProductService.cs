@@ -6,7 +6,7 @@ namespace AspNetHomework.Services.Interfaces
     /// <summary>
     /// Интерфейс сервиса для работы с данными о товарах.
     /// </summary>
-    public interface IProductService : ICrudService<ProductDTO>
+    public interface IProductService : ICrudService<ProductDto>
     {
     }
 }

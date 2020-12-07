@@ -18,7 +18,7 @@ namespace AspNetHomework.Repositories
     /// <typeparam name="TDto">Dto.</typeparam>
     /// <typeparam name="TModel">Доменная модель.</typeparam>
     public abstract class BaseRepository<TDto, TModel> : ICrudRepository<TDto, TModel>
-        where TDto : BaseDTO
+        where TDto : BaseDto
         where TModel : BaseEntity
     {
         private readonly IMapper _mapper;
