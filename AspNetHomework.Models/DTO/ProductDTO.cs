@@ -1,42 +1,42 @@
 ﻿using AspNetHomework.Database;
-using System.ComponentModel.DataAnnotations;
+using AspNetHomework.Models.DTO;
 
 namespace AspNetHomework.Models
 {
     /// <summary>
     /// DTO для <see cref="Product"/>.
     /// </summary>
-    public class ProductDTO
+    public class ProductDTO : BaseDTO
     {
         /// <summary>
         /// Артикул.
         /// </summary>
-        [Required]
         public string VendorCode { get; set; }
 
         /// <summary>
         /// Название.
         /// </summary>
-        [MaxLength(100)]
-        [Required]
         public string Name { get; set; }
 
         /// <summary>
         /// Описание.
         /// </summary>
-        [MaxLength(1000)]
         public string Description { get; set; }
 
         /// <summary>
         /// Цена.
         /// </summary>
-        [Required]
         public double Price { get; set; }
 
         /// <summary>
         /// Вес в кг.
         /// </summary>
-        [Required]
         public double Weight { get; set; }
+
+        /// <summary>
+        /// Поставщик.
+        /// </summary>
+        public long Vendor { get; set; }
+
     }
 }

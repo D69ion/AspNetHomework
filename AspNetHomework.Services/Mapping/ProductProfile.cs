@@ -14,7 +14,7 @@ namespace AspNetHomework.Services
         /// </summary>
         public ProductProfile()
         {
-            CreateMap<Product, ProductDTO>();
+            CreateMap<Product, ProductDTO>().ReverseMap();
         }
     }
 }
