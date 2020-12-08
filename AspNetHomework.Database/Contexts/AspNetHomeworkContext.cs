@@ -1,8 +1,6 @@
 ﻿using AspNetHomework.Database.Domain;
+using AspNetHomework.Database.Fluent;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace AspNetHomework.Database.Contexts
 {
@@ -37,7 +35,16 @@ namespace AspNetHomework.Database.Contexts
         /// <param name="options">Опции для конфигурации контекста.</param>
         public AspNetHomeworkContext(DbContextOptions options) : base(options)
         {
-            Database.EnsureCreated();
+            //Database.EnsureCreated();
+        }
+
+        /// <summary>
+        /// Правила создания сущностей.
+        /// </summary>
+        /// <param name="builder">Билдер моделей.</param>
+        protected override void OnModelCreating(ModelBuilder builder)
+        {
+            builder.ApplyConfiguration(new AvailabilityConfig());
         }
     }
 }

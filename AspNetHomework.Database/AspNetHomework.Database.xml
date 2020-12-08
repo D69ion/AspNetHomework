@@ -47,19 +47,15 @@
             </summary>
             <param name="options">Опции для конфигурации контекста.</param>
         </member>
+        <member name="M:AspNetHomework.Database.Contexts.AspNetHomeworkContext.OnModelCreating(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <summary>
+            Правила создания сущностей.
+            </summary>
+            <param name="builder">Билдер моделей.</param>
+        </member>
         <member name="T:AspNetHomework.Database.Domain.Availability">
             <summary>
             Наличие товара в магазине.
-            </summary>
-        </member>
-        <member name="P:AspNetHomework.Database.Domain.Availability.Shop">
-            <summary>
-            Магазин.
-            </summary>
-        </member>
-        <member name="P:AspNetHomework.Database.Domain.Availability.Product">
-            <summary>
-            Товар.
             </summary>
         </member>
         <member name="P:AspNetHomework.Database.Domain.Availability.Count">
@@ -77,6 +73,33 @@
             Идентификатор записи.
             </summary>
         </member>
+        <member name="T:AspNetHomework.Database.Domain.BaseEntityWithLinks`2">
+            <summary>
+            Базовый класс для связанных сущностей.
+            </summary>
+            <typeparam name="TEntity1">Связанная сущность 1.</typeparam>
+            <typeparam name="TEntity2">Связанная сущность 2.</typeparam>
+        </member>
+        <member name="P:AspNetHomework.Database.Domain.BaseEntityWithLinks`2.Entity1Id">
+            <summary>
+            Идентификатор связанной сущности 1.
+            </summary>
+        </member>
+        <member name="P:AspNetHomework.Database.Domain.BaseEntityWithLinks`2.Entity2Id">
+            <summary>
+            Идентификатор связанной сущности 2.
+            </summary>
+        </member>
+        <member name="P:AspNetHomework.Database.Domain.BaseEntityWithLinks`2.Entity1">
+            <summary>
+            Связанная сущность 1.
+            </summary>
+        </member>
+        <member name="P:AspNetHomework.Database.Domain.BaseEntityWithLinks`2.Entity2">
+            <summary>
+            Связанная сущность 2.
+            </summary>
+        </member>
         <member name="T:AspNetHomework.Database.Domain.Shop">
             <summary>
             Магазин.
@@ -90,6 +113,11 @@
         <member name="P:AspNetHomework.Database.Domain.Shop.Address">
             <summary>
             Адрес магазина.
+            </summary>
+        </member>
+        <member name="P:AspNetHomework.Database.Domain.Shop.Availabilities">
+            <summary>
+            Наличие товара в магазинах.
             </summary>
         </member>
         <member name="T:AspNetHomework.Database.Domain.Vendor">
@@ -141,6 +169,43 @@
             <summary>
             Поставщик.
             </summary>
+        </member>
+        <member name="P:AspNetHomework.Database.Product.VendorId">
+            <summary>
+            Идентификатор поставщика.
+            </summary>
+        </member>
+        <member name="P:AspNetHomework.Database.Product.Availabilities">
+            <summary>
+            Наличие товара в магазинах.
+            </summary>
+        </member>
+        <member name="T:AspNetHomework.Database.Fluent.AvailabilityConfig">
+            <summary>
+            Конфигурация миграций для <see cref="T:AspNetHomework.Database.Domain.Availability"/>.
+            </summary>
+        </member>
+        <member name="M:AspNetHomework.Database.Fluent.AvailabilityConfig.Configure(Microsoft.EntityFrameworkCore.Metadata.Builders.EntityTypeBuilder{AspNetHomework.Database.Domain.Availability})">
+            <summary>
+            Конфигурирование сущности <see cref="T:AspNetHomework.Database.Domain.Availability"/>.
+            </summary>
+            <param name="builder">Билдер сущности.</param>
+        </member>
+        <member name="T:AspNetHomework.Database.Fluent.FluentExtentions">
+            <summary>
+            Методы расширения для FluentApi.
+            </summary>
+        </member>
+        <member name="M:AspNetHomework.Database.Fluent.FluentExtentions.BaseEntityWithLinksConfig``3(Microsoft.EntityFrameworkCore.Metadata.Builders.EntityTypeBuilder{``0},System.Linq.Expressions.Expression{System.Func{``1,System.Collections.Generic.IEnumerable{``0}}},System.Linq.Expressions.Expression{System.Func{``2,System.Collections.Generic.IEnumerable{``0}}})">
+            <summary>
+            Конфигурация для слабой сущности.
+            </summary>
+            <typeparam name="T">Слабая сущность.</typeparam>
+            <typeparam name="T1">Сущность-ссылка 1.</typeparam>
+            <typeparam name="T2">Сущность-ссылка 2.</typeparam>
+            <param name="builder">Билдер сущности.</param>
+            <param name="withMany1">Дерево для связи 1.</param>
+            <param name="withMany2">Дерево для связи 2.</param>
         </member>
         <member name="T:AspNetHomework.Database.Mocks.ProductMock">
             <summary>

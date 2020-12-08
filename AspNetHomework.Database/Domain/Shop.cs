@@ -1,7 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Text;
 
 namespace AspNetHomework.Database.Domain
 {
@@ -23,5 +21,10 @@ namespace AspNetHomework.Database.Domain
         [Required]
         [StringLength(200)]
         public string Address { get; set; }
+
+        /// <summary>
+        /// Наличие товара в магазинах.
+        /// </summary>
+        public ICollection<Availability> Availabilities { get; set; }
     }
 }

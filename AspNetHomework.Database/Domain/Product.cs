@@ -1,4 +1,5 @@
 ﻿using AspNetHomework.Database.Domain;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
 namespace AspNetHomework.Database
@@ -41,7 +42,16 @@ namespace AspNetHomework.Database
         /// <summary>
         /// Поставщик.
         /// </summary>
-        [Required]
-        public long Vendor { get; set; }
+        public Vendor Vendor { get; set; }
+
+        /// <summary>
+        /// Идентификатор поставщика.
+        /// </summary>
+        public long VendorId { get; set; }
+
+        /// <summary>
+        /// Наличие товара в магазинах.
+        /// </summary>
+        public ICollection<Availability> Availabilities { get; set; }
     }
 }
