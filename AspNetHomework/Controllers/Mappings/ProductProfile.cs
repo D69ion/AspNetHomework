@@ -17,7 +17,8 @@ namespace AspNetHomework.Controllers.Mappings
         {
             CreateMap<CreateProductRequest, ProductDto>();
             CreateMap<UpdateProductRequest, ProductDto>();
-            CreateMap<ProductDto, ProductResponse>();
+            CreateMap<ProductDto, ProductResponse>()
+                .ForMember(x => x.VendorName, y => y.MapFrom(sourceMember => sourceMember.Vendor.Name));
         }
     }
 }

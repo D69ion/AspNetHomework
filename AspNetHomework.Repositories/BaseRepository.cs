@@ -22,8 +22,8 @@ namespace AspNetHomework.Repositories
         where TModel : BaseEntity
     {
         private readonly IMapper _mapper;
-        protected readonly AspNetHomeworkContext _context;
-        protected DbSet<TModel> DbSet => _context.Set<TModel>();
+        public AspNetHomeworkContext Context { get; }
+        protected DbSet<TModel> DbSet => Context.Set<TModel>();
 
         /// <summary>
         /// Инициализирует экземпляр <see cref="BaseRepository{TDto, TModel}"/>.
@@ -32,7 +32,7 @@ namespace AspNetHomework.Repositories
         /// <param name="mapper">Маппер.</param>
         protected BaseRepository(AspNetHomeworkContext context, IMapper mapper)
         {
-            _context = context;
+            Context = context;
             _mapper = mapper;
         }
 
@@ -41,7 +41,7 @@ namespace AspNetHomework.Repositories
         {
             var entity = _mapper.Map<TModel>(dto);
             await DbSet.AddAsync(entity);
-            await _context.SaveChangesAsync();
+            await Context.SaveChangesAsync();
             return await GetAsync(entity.Id);
         }
 
@@ -49,8 +49,8 @@ namespace AspNetHomework.Repositories
         public async Task DeleteAsync(params long[] ids)
         {
             var entities = await DbSet.Where(x => ids.Contains(x.Id)).ToListAsync();
-            _context.RemoveRange(entities);
-            await _context.SaveChangesAsync();
+            Context.RemoveRange(entities);
+            await Context.SaveChangesAsync();
         }
 
         /// <inheritdoc cref="IGettable{TDto, TModel}.GetAsync(CancellationToken)"/>
@@ -64,7 +64,7 @@ namespace AspNetHomework.Repositories
         /// <inheritdoc cref="IGettableById{TDto, TModel}.GetAsync(long)"/>
         public async Task<TDto> GetAsync(long id)
         {
-            var entity = await DbSet.AsNoTracking().FirstOrDefaultAsync(x => x.Id == id);
+            var entity = await DefaultIncludeProperties(DbSet).AsNoTracking().FirstOrDefaultAsync(x => x.Id == id);
             var dto = _mapper.Map<TDto>(entity);
             return dto;
         }
@@ -73,10 +73,16 @@ namespace AspNetHomework.Repositories
         public async Task<TDto> UpdateAsync(TDto dto, CancellationToken token = default)
         {
             var entity = _mapper.Map<TModel>(dto);
-            _context.Update(entity);
-            await _context.SaveChangesAsync(token);
+            Context.Update(entity);
+            await Context.SaveChangesAsync(token);
             var newEntity = await GetAsync(entity.Id);
             return _mapper.Map<TDto>(newEntity);
         }
+
+        /// <summary>
+        /// Доюавляет к выборке связанные параметры.
+        /// </summary>
+        /// <param name="dbSet">Коллекция DbSet репозитория.</param>
+        protected virtual IQueryable<TModel> DefaultIncludeProperties(DbSet<TModel> dbSet) => dbSet;
     }
 }

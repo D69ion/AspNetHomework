@@ -5,6 +5,7 @@ using AspNetHomework.Repositories.Interfaces;
 using System.Threading.Tasks;
 using System.Threading;
 using AspNetHomework.Services.Interfaces.CRUD;
+using System;
 
 namespace AspNetHomework.Services.Services
 {
@@ -27,7 +28,18 @@ namespace AspNetHomework.Services.Services
         ///<inheritdoc cref="ICreatable{TDto}.CreateAsync(TDto)"/>
         public async Task<ProductDto> CreateAsync(ProductDto dto)
         {
-            return await _repository.CreateAsync(dto);
+            using var scope = await _repository.Context.Database.BeginTransactionAsync();
+            try
+            {
+                var products = await _repository.CreateAsync(dto);
+                scope.Commit();
+                return products;
+            }
+            catch (Exception e)
+            {
+                scope.Rollback();
+                throw e;
+            }
         }
 
         ///<inheritdoc cref="IDeletable.DeleteAsync(long[])"/>

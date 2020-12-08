@@ -41,6 +41,6 @@ namespace AspNetHomework.Models.Requests.Product
         /// Поставщик.
         /// </summary>
         [Required]
-        public long Vendor { get; set; }
+        public long VendorId { get; set; }
     }
 }

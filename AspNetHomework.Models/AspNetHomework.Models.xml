@@ -99,6 +99,11 @@
             Поставщик.
             </summary>
         </member>
+        <member name="P:AspNetHomework.Models.ProductDto.VendorId">
+            <summary>
+            Идентификатор поставщика.
+            </summary>
+        </member>
         <member name="T:AspNetHomework.Models.Requests.Product.CreateProductRequest">
             <summary>
             Запрос на создание позиции товара.
@@ -129,7 +134,7 @@
             Вес в кг.
             </summary>
         </member>
-        <member name="P:AspNetHomework.Models.Requests.Product.CreateProductRequest.Vendor">
+        <member name="P:AspNetHomework.Models.Requests.Product.CreateProductRequest.VendorId">
             <summary>
             Поставщик.
             </summary>
@@ -204,7 +209,7 @@
             Вес в кг.
             </summary>
         </member>
-        <member name="P:AspNetHomework.Models.Responses.Product.ProductResponse.Vendor">
+        <member name="P:AspNetHomework.Models.Responses.Product.ProductResponse.VendorName">
             <summary>
             Поставщик.
             </summary>
