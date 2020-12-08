@@ -36,7 +36,11 @@ namespace AspNetHomework.Models
         /// <summary>
         /// Поставщик.
         /// </summary>
-        public long Vendor { get; set; }
+        public VendorDto Vendor { get; set; }
 
+        /// <summary>
+        /// Идентификатор поставщика.
+        /// </summary>
+        public long VendorId { get; set; }
     }
 }

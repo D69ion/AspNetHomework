@@ -38,7 +38,6 @@
         /// <summary>
         /// Поставщик.
         /// </summary>
-        public long Vendor { get; set; }
-
+        public string VendorName { get; set; }
     }
 }

@@ -3,6 +3,8 @@ using AspNetHomework.Database.Contexts;
 using AspNetHomework.Models;
 using AspNetHomework.Repositories.Interfaces;
 using AutoMapper;
+using Microsoft.EntityFrameworkCore;
+using System.Linq;
 
 namespace AspNetHomework.Repositories
 {
@@ -19,6 +21,12 @@ namespace AspNetHomework.Repositories
         public ProductRepository(AspNetHomeworkContext context, IMapper mapper) : base (context, mapper)
         {
 
+        }
+
+        ///<inheritdoc cref="DefaultIncludeProperties(DbSet{Product})"/>
+        protected override IQueryable<Product> DefaultIncludeProperties(DbSet<Product> dbSet)
+        {
+            return DbSet.Include(x => x.Vendor);
         }
     }
 }

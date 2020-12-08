@@ -1,4 +1,6 @@
-﻿namespace AspNetHomework.Repositories.Interfaces.CRUD
+﻿using AspNetHomework.Database.Contexts;
+
+namespace AspNetHomework.Repositories.Interfaces.CRUD
 {
     /// <summary>
     /// Интерфейс для работы с базовыми CRUD репозиториями.
@@ -12,5 +14,6 @@
         IGettableById<TDto, TModel>,
         IUpdatable<TDto, TModel>
     {
+        AspNetHomeworkContext Context { get; }
     }
 }
