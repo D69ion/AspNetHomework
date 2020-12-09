@@ -16,7 +16,7 @@ namespace AspNetHomework.Services.Services
         private readonly IShopRepository _repository;
 
         /// <summary>
-        /// Инициализирует экземпляр <see cref="ShopService/>.
+        /// Инициализирует экземпляр <see cref="ShopService"/>.
         /// </summary>
         /// <param name="repository">Репозиторий.</param>
         public ShopService(IShopRepository repository)
