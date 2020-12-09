@@ -100,11 +100,11 @@
             Сервис для работы с данными о товарах.
             </summary>
         </member>
-        <member name="M:AspNetHomework.Services.Services.ProductService.#ctor(AspNetHomework.Repositories.Interfaces.IProductRepository)">
+        <member name="M:AspNetHomework.Services.Services.ProductService.#ctor(AspNetHomework.Repositories.Interfaces.IUnitOfWork)">
             <summary>
             Инициализирует экземпляр <see cref="T:AspNetHomework.Services.Services.ProductService"/>.
             </summary>
-            <param name="repository">Репозиторий.</param>
+            <param name="unitOfWork">Экземпляр UoW</param>
         </member>
         <member name="M:AspNetHomework.Services.Services.ProductService.CreateAsync(AspNetHomework.Models.ProductDto)">
             <inheritdoc cref="M:AspNetHomework.Services.Interfaces.CRUD.ICreatable`1.CreateAsync(`0)"/>
@@ -126,7 +126,12 @@
             Сервис для работы с данными о магазинах.
             </summary>
         </member>
-        <!-- Badly formed XML comment ignored for member "M:AspNetHomework.Services.Services.ShopService.#ctor(AspNetHomework.Repositories.Interfaces.IShopRepository)" -->
+        <member name="M:AspNetHomework.Services.Services.ShopService.#ctor(AspNetHomework.Repositories.Interfaces.IShopRepository)">
+            <summary>
+            Инициализирует экземпляр <see cref="T:AspNetHomework.Services.Services.ShopService"/>.
+            </summary>
+            <param name="repository">Репозиторий.</param>
+        </member>
         <member name="M:AspNetHomework.Services.Services.ShopService.CreateAsync(AspNetHomework.Models.DTO.ShopDto)">
             <inheritdoc cref="M:AspNetHomework.Services.Interfaces.CRUD.ICreatable`1.CreateAsync(`0)"/>
         </member>

@@ -16,6 +16,7 @@ namespace AspNetHomework.Repositories
         {
             services.AddScoped<IProductRepository, ProductRepository>();
             services.AddScoped<IShopRepository, ShopRepository>();
+            services.AddScoped<IUnitOfWork, UnitOfWork>();
         }
     }
 }
