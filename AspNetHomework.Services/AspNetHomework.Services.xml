@@ -104,7 +104,7 @@
             <summary>
             Инициализирует экземпляр <see cref="T:AspNetHomework.Services.Services.ProductService"/>.
             </summary>
-            <param name="unitOfWork">Экземпляр UoW</param>
+            <param name="unitOfWork">Экземпляр UoW.</param>
         </member>
         <member name="M:AspNetHomework.Services.Services.ProductService.CreateAsync(AspNetHomework.Models.ProductDto)">
             <inheritdoc cref="M:AspNetHomework.Services.Interfaces.CRUD.ICreatable`1.CreateAsync(`0)"/>
