@@ -13,6 +13,7 @@ namespace AspNetHomework.Database.Contexts
             var configuration = new ConfigurationBuilder()
                                .SetBasePath(Directory.GetCurrentDirectory())
                                .AddJsonFile("appsettings.json", false, true)
+                               .AddUserSecrets<DesignTimeDbContextFactory>()
                                .AddJsonFile($"appsettings.{Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT")}.json",
                                         true, true)
                                .AddEnvironmentVariables()

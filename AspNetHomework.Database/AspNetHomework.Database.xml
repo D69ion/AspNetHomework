@@ -41,6 +41,21 @@
             Поставщики.
             </summary>
         </member>
+        <member name="P:AspNetHomework.Database.Contexts.AspNetHomeworkContext.Users">
+            <summary>
+            Пользователи.
+            </summary>
+        </member>
+        <member name="P:AspNetHomework.Database.Contexts.AspNetHomeworkContext.Roles">
+            <summary>
+            Роли.
+            </summary>
+        </member>
+        <member name="P:AspNetHomework.Database.Contexts.AspNetHomeworkContext.UserRoles">
+            <summary>
+            Роли пользователей.
+            </summary>
+        </member>
         <member name="M:AspNetHomework.Database.Contexts.AspNetHomeworkContext.#ctor(Microsoft.EntityFrameworkCore.DbContextOptions)">
             <summary>
             Инициализирует экземпляр <see cref="T:AspNetHomework.Database.Contexts.AspNetHomeworkContext"/>.
@@ -100,6 +115,21 @@
             Связанная сущность 2.
             </summary>
         </member>
+        <member name="T:AspNetHomework.Database.Domain.Role">
+            <summary>
+            Роль.
+            </summary>
+        </member>
+        <member name="P:AspNetHomework.Database.Domain.Role.Name">
+            <summary>
+            Название.
+            </summary>
+        </member>
+        <member name="P:AspNetHomework.Database.Domain.Role.UserRoles">
+            <summary>
+            Роли пользователя.
+            </summary>
+        </member>
         <member name="T:AspNetHomework.Database.Domain.Shop">
             <summary>
             Магазин.
@@ -118,6 +148,31 @@
         <member name="P:AspNetHomework.Database.Domain.Shop.Availabilities">
             <summary>
             Наличие товара в магазинах.
+            </summary>
+        </member>
+        <member name="T:AspNetHomework.Database.Domain.User">
+            <summary>
+            Пользователь.
+            </summary>
+        </member>
+        <member name="P:AspNetHomework.Database.Domain.User.Login">
+            <summary>
+            Логин пользователя.
+            </summary>
+        </member>
+        <member name="P:AspNetHomework.Database.Domain.User.Password">
+            <summary>
+            Пароль пользователя.
+            </summary>
+        </member>
+        <member name="P:AspNetHomework.Database.Domain.User.UserRoles">
+            <summary>
+            Роли пользователя.
+            </summary>
+        </member>
+        <member name="T:AspNetHomework.Database.Domain.UserRole">
+            <summary>
+            Роли пользователей.
             </summary>
         </member>
         <member name="T:AspNetHomework.Database.Domain.Vendor">
@@ -206,6 +261,17 @@
             <param name="builder">Билдер сущности.</param>
             <param name="withMany1">Дерево для связи 1.</param>
             <param name="withMany2">Дерево для связи 2.</param>
+        </member>
+        <member name="T:AspNetHomework.Database.Fluent.UserRolesConfig">
+            <summary>
+            Конфигурация миграций для <see cref="T:AspNetHomework.Database.Domain.UserRole"/>.
+            </summary>
+        </member>
+        <member name="M:AspNetHomework.Database.Fluent.UserRolesConfig.Configure(Microsoft.EntityFrameworkCore.Metadata.Builders.EntityTypeBuilder{AspNetHomework.Database.Domain.UserRole})">
+            <summary>
+            Конфигурирование сущности <see cref="T:AspNetHomework.Database.Domain.UserRole"/>.
+            </summary>
+            <param name="builder">Билдер сущности.</param>
         </member>
         <member name="T:AspNetHomework.Database.Mocks.ProductMock">
             <summary>

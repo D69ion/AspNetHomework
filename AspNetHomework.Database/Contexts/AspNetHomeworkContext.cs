@@ -30,6 +30,21 @@ namespace AspNetHomework.Database.Contexts
         public DbSet<Vendor> Vendors { get; set; }
 
         /// <summary>
+        /// Пользователи.
+        /// </summary>
+        public DbSet<User> Users { get; set; }
+
+        /// <summary>
+        /// Роли.
+        /// </summary>
+        public DbSet<Role> Roles { get; set; }
+
+        /// <summary>
+        /// Роли пользователей.
+        /// </summary>
+        public DbSet<UserRole> UserRoles { get; set; }
+
+        /// <summary>
         /// Инициализирует экземпляр <see cref="AspNetHomeworkContext"/>.
         /// </summary>
         /// <param name="options">Опции для конфигурации контекста.</param>
@@ -45,6 +60,7 @@ namespace AspNetHomework.Database.Contexts
         protected override void OnModelCreating(ModelBuilder builder)
         {
             builder.ApplyConfiguration(new AvailabilityConfig());
+            builder.ApplyConfiguration(new UserRolesConfig());
         }
     }
 }
